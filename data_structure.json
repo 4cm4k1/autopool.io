@@ -1,45 +1,50 @@
 {
-  "users": [
-    {
-      "_id": "234rfasv0351wjvafg04",
-      "googleAuthStuff": "eh1340tasgd031ff33444",
-      "firstName": "Anthony",
-      "lastName": "Maki",
-      "email": "example@dot.com",
-      "pickupAddress": "123 Main St, Minneapolis, MN 55408",
-      "phone": "612-555-5555",
-      "role": "driver",
-      "destID": "2512qwetas0gcoik464213",
-      "groupID": "1235gascbo462edg32124",
-      "appAdmin": true,
-      "destAdminID": "2512qwetas0gcoik464213"
-    }
-  ],
-  "groups": [
-    {
-      "_id": "351wsfdhb063jetfdvc2034",
-      "members": [
-        "234rfasv0351wjvafg04",
-        "...",
-        "...",
-        "..."
-      ],
-      "route": "https://maps.google.com/api/?parameter&apikey&etc"
-    }
-  ],
-  "destinations": [
-    {
-      "_id": "2512qwetas0gcoik464213",
-      "name": "Prime Digital Academy",
-      "address": "9401 James Ave S, Bloomington, MN 55431",
-      "phone": "952-555-5555",
-      "email": "info@primeacademy.io",
-      "destAdmins": [
-        "234rfasv0351wjvafg04",
-        "...",
-        "...",
-        "..."
-      ]
-    }
-  ]
+    "users": [{
+        "_id": "234rfasv0351wjvafg04",
+        "googleAuthStuff": "eh1340tasgd031ff33444",
+        "firstName": "Anthony",
+        "lastName": "Maki",
+        "email": "example@dot.com",
+        "pickupAddress": "123 Main St, Minneapolis, MN 55408",
+        "phone": "612-555-5555",
+        "role": "driver",
+        "destID": "2512qwetas0gcoik464213",
+        "groupID": "1235gascbo462edg32124",
+        "appAdmin": true,
+        "destAdminID": "2512qwetas0gcoik464213"
+    }],
+    "groups": [{
+        "_id": "351wsfdhb063jetfdvc2034",
+        "members": [
+            "234rfasv0351wjvafg04",
+            "...",
+            "...",
+            "..."
+        ],
+        "route": "https://maps.google.com/api/?parameter&apikey&etc"
+    }],
+    "destinations": [{
+        "_id": "2512qwetas0gcoik464213",
+        "name": "Prime Digital Academy",
+        "address": "9401 James Ave S, Bloomington, MN 55431",
+        "phone": "952-555-5555",
+        "email": "info@primeacademy.io",
+        "destAdmins": [
+            "234rfasv0351wjvafg04",
+            "...",
+            "...",
+            "..."
+        ]
+    }],
+    "distances": [{
+        "_id": "14350bsdty0fg234111",
+        "driverID": "234rfasv0351wjvafg04",
+        "passengers": [{
+            "passengerID": "...",
+            "distFromDriver": "0.21"
+        }, {
+            "passengerID": "...",
+            "distFromDriver": "0.73"
+        }]
+    }]
 }
