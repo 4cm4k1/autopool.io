@@ -1,0 +1,39 @@
+{
+  "name": "autopool.io",
+  "version": "1.0.0",
+  "description": "The carpool you never had",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-messages": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angularfire": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "firebase": "^3.2.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "material-design-icons": "^2.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4cm4k1/autopool.io.git"
+  },
+  "author": "Anthony Maki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4cm4k1/autopool.io/issues"
+  },
+  "homepage": "https://github.com/4cm4k1/autopool.io#readme"
+}
