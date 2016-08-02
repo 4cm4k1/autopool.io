@@ -1,0 +1,11 @@
+.google-login-icon {
+  margin: 8px 16px 8px 8px;
+}
+
+.google-login-button {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: rgb(0,0,0);
+  color: rgba(0,0,0,0.54);
+  padding-right: 16px;
+}

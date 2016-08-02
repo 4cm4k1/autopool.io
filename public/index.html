@@ -5,7 +5,8 @@
     <title>Autopool.io</title>
     <meta name="viewport" content="initial-scale=1, width=device-width"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" charset="utf-8"/>
-    <link rel="stylesheet" href="/assets/vendors/angular-material.min.css" charset="utf-8"/>
+    <link rel="stylesheet" href="/assets/vendors/angular-material/angular-material.min.css" charset="utf-8"/>
+    <link rel="stylesheet" href="/assets/styles/style.css"/>
     <script src="/assets/vendors/angular/angular.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/firebase/firebase.js" charset="utf-8"></script>
     <script src="/assets/vendors/angularfire/dist/angularfire.min.js" charset="utf-8"></script>
@@ -18,6 +19,10 @@
 
   </head>
   <body ng-controller="MainCtrl as main">
-    {{ main.test }} <i class="material-icons">face</i>
+    <h1><i class="material-icons">face</i> Let's try logging in!</h1>
+    <md-button class="md-raised google-login-button" ng-click="main.loginUser()">
+      <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="google-login-icon"></md-icon>
+      Sign in with Google
+    </md-button>
   </body>
 </html>
