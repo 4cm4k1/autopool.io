@@ -1,11 +1,24 @@
-.google-login-icon {
-  margin: 8px 16px 8px 8px;
+.wrapper {
+  position: relative;
 }
 
+.app-ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 99;
+}
+
+.logo-icon {
+    margin: 8px 16px 8px 8px;
+}
 .google-login-button {
-  font-family: 'Roboto';
-  font-size: 14px;
-  color: rgb(0,0,0);
-  color: rgba(0,0,0,0.54);
-  padding-right: 16px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.54);
+    padding-right: 16px;
+}
+.google-map {
+    height: 100%;
 }

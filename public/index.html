@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="autopoolIoApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Autopool.io</title>
-    <meta name="viewport" content="initial-scale=1, width=device-width"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" charset="utf-8"/>
-    <link rel="stylesheet" href="/assets/vendors/angular-material/angular-material.min.css" charset="utf-8"/>
-    <link rel="stylesheet" href="/assets/styles/style.css"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" charset="utf-8" />
+    <link rel="stylesheet" href="/assets/vendors/angular-material/angular-material.min.css" charset="utf-8" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
     <script src="/assets/vendors/angular/angular.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/firebase/firebase.js" charset="utf-8"></script>
     <script src="/assets/vendors/angularfire/dist/angularfire.min.js" charset="utf-8"></script>
@@ -17,12 +18,75 @@
     <script src="/assets/vendors/angular-material/angular-material.min.js" charset="utf-8"></script>
     <script src="/assets/scripts/client.min.js" charset="utf-8"></script>
 
-  </head>
-  <body ng-controller="MainCtrl as main">
-    <h1><i class="material-icons">face</i> Let's try logging in!</h1>
-    <md-button class="md-raised google-login-button" ng-click="main.loginUser()">
-      <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="google-login-icon"></md-icon>
-      Sign in with Google
-    </md-button>
-  </body>
+</head>
+
+<body ng-controller="MainCtrl as main" class="wrapper">
+    <main class="app-ui">
+        <md-card>
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">
+                      Autopool.io
+                      <md-icon class="logo-icon">directions_car</md-icon>
+                    </span>
+                    <span class="md-subhead">
+                      The carpool you never had
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button class="google-login-button" ng-click="main.loginUser()">
+                    <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="logo-icon"></md-icon>
+                    Sign in with Google
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </main>
+
+    <div id="map" class="google-map"></div>
+
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 44.9778,
+                    lng: -93.2650
+                },
+                zoom: 10
+            });
+            // var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
+
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+              }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+              });
+            } else {
+              // Browser doesn't support Geolocation
+              handleLocationError(false, infoWindow, map.getCenter());
+            }
+          }
+
+          function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                                  'Error: The Geolocation service failed.' :
+                                  'Error: Your browser doesn\'t support geolocation.');
+          }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqsY-1ozuMgbrkFCcY4OJJ9G4SKk7URg&callback=initMap" async defer></script>
+</body>
+
 </html>
