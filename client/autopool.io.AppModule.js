@@ -1,4 +1,4 @@
 (function() {
     'use strict';
-    angular.module('autopoolIoApp', ['ngMaterial', 'ngMessages', 'firebase']);
+    angular.module('autopoolIoApp', ['ngMaterial', 'ngMessages', 'firebase', 'ngRoute']);
 })();

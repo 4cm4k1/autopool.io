@@ -17,10 +17,10 @@
     <script src="/assets/vendors/angular-route/angular-route.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/angular-material/angular-material.min.js" charset="utf-8"></script>
     <script src="/assets/scripts/client.min.js" charset="utf-8"></script>
-
+    <base href="/"/>
 </head>
 
-<body ng-controller="MainCtrl as main" class="wrapper">
+<body class="wrapper">
     <main class="app-ui">
         <md-card>
             <md-card-header>
@@ -34,12 +34,9 @@
                     </span>
                 </md-card-header-text>
             </md-card-header>
-            <md-card-actions layout="row" layout-align="start center">
-                <md-button class="google-login-button" ng-click="main.loginUser()">
-                    <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="logo-icon"></md-icon>
-                    Sign in with Google
-                </md-button>
-            </md-card-actions>
+            <!-- ng-view -->
+            <ng-view></ng-view>
+            <!-- This is where md-card-actions was -->
         </md-card>
     </main>
 

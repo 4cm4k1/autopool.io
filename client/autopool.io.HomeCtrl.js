@@ -1,10 +1,10 @@
 (function() {
     'use strict';
-    angular.module('autopoolIoApp').controller('MainCtrl', MainCtrl);
+    angular.module('autopoolIoApp').controller('HomeCtrl', HomeCtrl);
 
-    MainCtrl.$inject = ['$http', 'LoginService'];
+    HomeCtrl.$inject = ['$http', 'LoginService', '$location'];
 
-    function MainCtrl($http, LoginService) {
+    function HomeCtrl($http, LoginService, $location) {
         var vm = this;
 
         vm.test = 'Hello World! ' + 42;
@@ -16,18 +16,10 @@
             LoginService.$signInWithPopup("google").then(function(firebaseUser) {
                 console.log("Signed in as:", firebaseUser.user.displayName, firebaseUser.user.email);
                 console.log('Info:', firebaseUser);
+                $location.path('/loggedin');
             }).catch(function(error) {
                 console.log("Authentication failed:", error);
             });
         };
-
-        // var auth = $firebaseAuth();
-        //
-        // // login with Google
-        // auth.$signInWithPopup("google").then(function(firebaseUser) {
-        //   console.log("Signed in as:", firebaseUser.uid);
-        // }).catch(function(error) {
-        //   console.log("Authentication failed:", error);
-        // });
     }
 })();
