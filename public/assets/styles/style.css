@@ -1,14 +1,3 @@
-.wrapper {
-  position: relative;
-}
-
-.app-ui {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 99;
-}
-
 .logo-icon {
     margin: 8px 16px 8px 8px;
 }
@@ -18,7 +7,4 @@
     color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, 0.54);
     padding-right: 16px;
-}
-.google-map {
-    height: 100%;
 }

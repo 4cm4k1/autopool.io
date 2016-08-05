@@ -1,7 +1,7 @@
 (function() {
-    angular.module('autopoolIoApp').config(['$routeProvider', '$locationProvider', routeViews]);
+    angular.module('autopoolIoApp').config(['$routeProvider', '$locationProvider', '$mdThemingProvider', configRoutesAndTheme]);
 
-    function routeViews($routeProvider, $locationProvider) {
+    function configRoutesAndTheme($routeProvider, $locationProvider, $mdThemingProvider) {
         $routeProvider.when('/home', {
             // the rest is the same for ui-router and ngRoute...
             controller: 'HomeCtrl as home',
@@ -50,6 +50,12 @@
           controller: 'HomeCtrl as home',
           templateUrl: 'views/home.html'
         });
+
         $locationProvider.html5Mode(true);
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('teal')
+            .accentPalette('light-green')
+            .warnPalette('deep-orange');
     }
 })();
