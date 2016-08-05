@@ -1,4 +1,18 @@
-<md-button class="google-login-button" ng-click="home.loginUser()">
-    <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="logo-icon"></md-icon>
-    Sign in with Google
-</md-button>
+<div layout="column" flex layout-padding>
+    <section>
+        <h1 class="md-headline">The carpool you never had</h1>
+        <p class="md-body-1">
+            Carpooling is an elegant solution to the problem of commute stress, congestion, and environmental concerns, but it's often too much of a hassle to consider.
+        </p>
+        <p class="md-body-1">
+            Autopool.io is a simple carpool discovery and optimization service that allows you to connect to coworkers or classmates who go to the same place you do every day.
+        </p>
+        <p class="md-body-1">
+            Give it a shot. You'll save money, help traffic and the environment, and get to know your colleagues better! Create an account with Google below.
+        </p>
+    </section>
+    <md-button class="google-login-button" ng-click="home.loginUser()" layout-fill>
+        <md-icon md-svg-src="/assets/vendors/google.svg" aria-label="Google" class="logo-icon"></md-icon>
+        Sign in with Google
+    </md-button>
+</div>
