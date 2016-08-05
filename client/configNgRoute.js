@@ -15,8 +15,8 @@
                 // }]
             // }
         }).when('/loggedin', {
-          controller: 'LoggedInCtrl as loggedin',
-          templateUrl: 'views/loggedin.html',
+          controller: 'OnboardCtrl as onboard',
+          templateUrl: 'views/onboard.html',
           resolve: {
             'currentAuth': ['LoginService', function(LoginService){
               return LoginService.$requireSignIn();
