@@ -16,7 +16,7 @@
             LoginService.$signInWithPopup("google").then(function(firebaseUser) {
                 console.log("Signed in as:", firebaseUser.user.displayName, firebaseUser.user.email);
                 console.log('Info:', firebaseUser);
-                $location.path('/loggedin');
+                $location.path('/onboard');
             }).catch(function(error) {
                 console.log("Authentication failed:", error);
             });

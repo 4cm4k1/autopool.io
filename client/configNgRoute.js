@@ -14,9 +14,33 @@
                 //     return Auth.$waitForSignIn();
                 // }]
             // }
-        }).when('/loggedin', {
+        }).when('/onboard', {
           controller: 'OnboardCtrl as onboard',
           templateUrl: 'views/onboard.html',
+          resolve: {
+            'currentAuth': ['LoginService', function(LoginService){
+              return LoginService.$requireSignIn();
+            }]
+          }
+        }).when('/group', {
+          controller: 'GroupCtrl as group',
+          templateUrl: 'views/group.html',
+          resolve: {
+            'currentAuth': ['LoginService', function(LoginService){
+              return LoginService.$requireSignIn();
+            }]
+          }
+        }).when('/ride', {
+          controller: 'RideCtrl as ride',
+          templateUrl: 'views/ride.html',
+          resolve: {
+            'currentAuth': ['LoginService', function(LoginService){
+              return LoginService.$requireSignIn();
+            }]
+          }
+        }).when('/settings', {
+          controller: 'SettingsCtrl as settings',
+          templateUrl: 'views/settings.html',
           resolve: {
             'currentAuth': ['LoginService', function(LoginService){
               return LoginService.$requireSignIn();

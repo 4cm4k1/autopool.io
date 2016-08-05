@@ -1,10 +1,10 @@
 (function() {
     'use strict';
-    angular.module('autopoolIoApp').controller('LoggedInCtrl', LoggedInCtrl);
+    angular.module('autopoolIoApp').controller('OnboardCtrl', OnboardCtrl);
 
-    LoggedInCtrl.$inject = ['$http', 'currentAuth'];
+    OnboardCtrl.$inject = ['$http', 'currentAuth'];
 
-    function LoggedInCtrl($http, currentAuth) {
+    function OnboardCtrl($http, currentAuth) {
         var vm = this;
 
         vm.displayName = currentAuth.displayName;
