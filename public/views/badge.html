@@ -11,16 +11,16 @@
     </md-card-header>
     <md-card-actions>
         <md-card-icon-actions layout="row" layout-align="space-around center">
-            <md-button class="md-icon-button" aria-label="Settings">
+            <md-button class="md-icon-button" aria-label="Settings" ng-click="badge.goToSettings()">
               <md-tooltip md-direction="down">Settings</md-tooltip>
               <md-icon>settings</md-icon>
             </md-button>
             <!-- TODO: Add ng-show checking admin status -->
-            <md-button class="md-icon-button" aria-label="Admin Settings">
+            <md-button class="md-icon-button" aria-label="Admin Settings" ng-click="badge.goToAdminSettings()">
               <md-tooltip md-direction="down">Admin Settings</md-tooltip>
               <md-icon>settings_applications</md-icon>
             </md-button>
-            <md-button class="md-icon-button" aria-label="Sign Out">
+            <md-button class="md-icon-button" aria-label="Sign Out" ng-click="badge.signOut()">
               <md-tooltip md-direction="down">Sign Out</md-tooltip>
               <md-icon>exit_to_app</md-icon>
             </md-button>

@@ -7,7 +7,11 @@
     function HomeCtrl($http, Auth, $location) {
         var vm = this;
 
-        vm.test = 'Hello World! ' + 42;
+        Auth.$onAuthStateChanged(function(firebaseUser){
+            if(firebaseUser) {
+                $location.path('/onboard');
+            }
+        });
 
         vm.loginUser = function() {
             vm.message = null;
