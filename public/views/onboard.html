@@ -1,33 +1,4 @@
-<div layout="column" flex layout-padding>
-    <md-list>
-        <md-list-item class="md-2-line">
-            <img class="md-avatar" ng-src="{{onboard.photoURL}}" alt="{{onboard.displayName}}" />
-            <div class="md-list-item-text">
-                <h3>{{onboard.displayName}}</h3>
-                <p>{{onboard.email}}</p>
-            </div>
-            <!-- <md-icon class="md-secondary" aria-label="Settings" ng-click="">settings</md-icon>
-            <md-icon class="md-secondary" aria-label="Sign Out" ng-click="">exit_to_app</md-icon> -->
-            <md-fab-speed-dial md-open="false" md-direction="down" class="md-fling" ng-cloak style="position: absolute; top: 0px; right: 0px;">
-                <md-fab-trigger>
-                    <md-button aria-label="Menu" class="md-primary md-fab">
-                        <md-icon>menu</md-icon>
-                    </md-button>
-                </md-fab-trigger>
-                <md-fab-actions>
-                    <md-button aria-label="Settings" class="md-fab md-raised md-mini">
-                        <md-tooltip md-direction="right">Settings</md-tooltip>
-                        <md-icon aria-label="Settings">settings</md-icon>
-                    </md-button>
-                    <md-button aria-label="Sign Out" class="md-fab md-raised md-mini">
-                        <md-tooltip md-direction="right">Sign Out</md-tooltip>
-                        <md-icon aria-label="Sign Out">exit_to_app</md-icon>
-                    </md-button>
-                </md-fab-actions>
-            </md-fab-speed-dial>
-        </md-list-item>
-    </md-list>
-    <md-divider></md-divider>
+<div layout="column" flex layout-padding layout-align="space-around stretch">
     <div layout-gt-sm="row">
         <md-input-container class="md-icon-float md-block" flex-gt-sm>
             <label>First Name</label>

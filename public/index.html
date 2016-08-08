@@ -39,13 +39,7 @@
       </section>
     </main>
 
-    <md-card style="position: absolute; top: 0px; right: 0px;">
-      <md-card-header>
-        <md-card-header-text>
-          Account Info goes here
-        </md-card-header-text>
-      </md-card-header>
-    </md-card>
+    <div ng-include="'views/badge.html'" class="" style="position: absolute; top: 0px; right: 0px;" ng-controller="BadgeCtrl as badge" ng-show="badge.user"></div>
 
     <script>
         var map;

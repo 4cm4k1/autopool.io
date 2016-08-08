@@ -1,1 +1,29 @@
 <!-- This will be the HTML partial showing user info when authenticated  -->
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <img class="md-user-avatar" ng-src="{{badge.user.photoURL}}" alt="{{badge.user.displayName}}" />
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">{{badge.user.displayName}}</span>
+            <span class="md-subhead">{{badge.user.email}}</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-actions>
+        <md-card-icon-actions layout="row" layout-align="space-around center">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-tooltip md-direction="down">Settings</md-tooltip>
+              <md-icon>settings</md-icon>
+            </md-button>
+            <!-- TODO: Add ng-show checking admin status -->
+            <md-button class="md-icon-button" aria-label="Admin Settings">
+              <md-tooltip md-direction="down">Admin Settings</md-tooltip>
+              <md-icon>settings_applications</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Sign Out">
+              <md-tooltip md-direction="down">Sign Out</md-tooltip>
+              <md-icon>exit_to_app</md-icon>
+            </md-button>
+        </md-card-icon-actions>
+    </md-card-actions>
+</md-card>
