@@ -13,10 +13,6 @@
 
         console.log('Signed in as:', vm.displayName, vm.email);
         console.log('Full user object:', currentAuth);
-        // currentAuth.$onAuthStateChanged(function(firebaseUser) {
-        //     vm.firebaseUser = firebaseUser;
-        //     console.log('firebaseUser:', vm.firebaseUser);
-        // });
     }
 
 })();
