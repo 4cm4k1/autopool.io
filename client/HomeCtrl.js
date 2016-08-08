@@ -2,9 +2,9 @@
     'use strict';
     angular.module('autopoolIoApp').controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$http', 'LoginService', '$location'];
+    HomeCtrl.$inject = ['$http', 'Auth', '$location'];
 
-    function HomeCtrl($http, LoginService, $location) {
+    function HomeCtrl($http, Auth, $location) {
         var vm = this;
 
         vm.test = 'Hello World! ' + 42;
@@ -13,7 +13,7 @@
             vm.message = null;
             vm.error = null;
 
-            LoginService.$signInWithPopup("google").then(function(firebaseUser) {
+            Auth.$signInWithPopup("google").then(function(firebaseUser) {
                 console.log("Signed in as:", firebaseUser.user.displayName, firebaseUser.user.email);
                 console.log('Info:', firebaseUser);
                 $location.path('/onboard');
