@@ -38,6 +38,14 @@
               return Auth.$requireSignIn();
             }]
           }
+        }).when('/admin', {
+          controller: 'SettingsAdminCtrl as admin',
+          templateUrl: 'views/admin.html',
+          resolve: {
+            'currentAuth': ['Auth', function(Auth){
+              return Auth.$requireSignIn();
+            }]
+          }
         }).otherwise({
           controller: 'HomeCtrl as home',
           templateUrl: 'views/home.html'

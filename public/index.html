@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>Autopool.io</title>
-    <meta name="viewport" content="initial-scale=1, width=device-width"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" charset="utf-8"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
     <link rel="stylesheet" href="/assets/vendors/angular-material/angular-material.min.css" charset="utf-8" />
-    <link rel="stylesheet" href="/assets/styles/style.css"/>
+    <link rel="stylesheet" href="/assets/styles/style.css" />
     <script src="/assets/vendors/angular/angular.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/firebase/firebase.js" charset="utf-8"></script>
     <script src="/assets/vendors/angularfire/dist/angularfire.min.js" charset="utf-8"></script>
@@ -17,114 +17,32 @@
     <script src="/assets/vendors/angular-messages/angular-messages.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/angular-route/angular-route.min.js" charset="utf-8"></script>
     <script src="/assets/vendors/angular-material/angular-material.min.js" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqsY-1ozuMgbrkFCcY4OJJ9G4SKk7URg"></script>
     <script src="/assets/scripts/client.min.js" charset="utf-8"></script>
-    <base href="/"/>
+    <base href="/" />
 </head>
 
 <body>
     <main layout="column" layout-fill>
-      <section layout="row" flex>
-        <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-is-locked-open="true" md-whiteframe="4">
-          <md-toolbar class="">
-            <h1 class="md-toolbar-tools">Autopool.io</h1>
-          </md-toolbar>
-          <md-content>
-            <ng-view></ng-view>
-          </md-content>
-        </md-sidenav>
-        <md-content flex>
-          <div id="map" layout="column" layout-fill layout-align="top center">
-          </div>
-        </md-content>
-      </section>
+        <section layout="row" flex>
+            <!-- SIDE MENU -->
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-is-locked-open="true" md-whiteframe="4">
+                <md-toolbar class="">
+                    <h1 class="md-toolbar-tools">Autopool.io</h1>
+                </md-toolbar>
+                <md-content layout="column" flex layout-padding>
+                    <ng-view></ng-view>
+                </md-content>
+            </md-sidenav>
+            <!-- MAP -->
+            <md-content flex ng-controller="MapCtrl as map">
+                <div id="map" layout="column" layout-fill layout-align="top center"></div>
+            </md-content>
+        </section>
     </main>
 
+    <!-- ACCOUNT INFO BADGE - VISIBLE WHEN SIGNED IN -->
     <div ng-include="'views/badge.html'" class="" style="position: absolute; top: 0px; right: 0px;" ng-controller="BadgeCtrl as badge" ng-show="badge.user"></div>
-
-    <script>
-        var map;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: 44.9778,
-                    lng: -93.2650
-                },
-                zoom: 10,
-                disableDefaultUI: true,
-                styles: [{
-                    featureType: 'road',
-                    elementType: 'geometry',
-                    stylers: [{
-                        color: '#558B2F'
-                    }]
-                }, {
-                  featureType: 'road',
-                  elementType: 'labels',
-                  stylers: [{
-                    saturation: -100
-                  }]
-                }, {
-                    featureType: 'poi',
-                    elementType: 'labels',
-                    stylers: [{
-                        visibility: 'off'
-                    }]
-                }, {
-                  featureType: 'water',
-                  elementType: 'geometry',
-                  stylers: [{
-                    color: '#0D47A1'
-                  }]
-                }, {
-                  featureType: 'water',
-                  elementType: 'labels',
-                  stylers: [{
-                    visibility: 'off'
-                  }]
-                }, {
-                  featureType: 'administrative',
-                  elementType: 'labels',
-                  stylers: [{
-                    visibility: 'off'
-                  }]
-                }, {
-                    featureType: 'all',
-                    stylers: [{
-                        saturation: -50
-                    }]
-                }]
-            });
-            // var infoWindow = new google.maps.InfoWindow({map: map});
-
-            // Try HTML5 geolocation.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-
-                    // infoWindow.setPosition(pos);
-                    // infoWindow.setContent('Location found.');
-                    map.setCenter(pos);
-                }, function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-            } else {
-                // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
-            }
-        }
-
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-            infoWindow.setPosition(pos);
-            infoWindow.setContent(browserHasGeolocation ?
-                'Error: The Geolocation service failed.' :
-                'Error: Your browser doesn\'t support geolocation.');
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqsY-1ozuMgbrkFCcY4OJJ9G4SKk7URg&callback=initMap" async defer></script>
 </body>
 
 </html>

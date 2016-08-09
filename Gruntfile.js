@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // makes all src relative to cwd
-          {expand: true, cwd: 'node_modules', src: ['angular/**', 'angular-animate/**', 'angular-aria/**', 'angular-material/**', 'angular-messages/**', 'angular-route/**', 'angularfire/**', 'firebase/**'], dest: 'public/assets/vendors'},
+          {expand: true, cwd: 'node_modules', src: ['angular/**', 'angular-animate/**', 'angular-aria/**', 'angular-material/**', 'angular-messages/**', 'angular-route/**', 'angularfire/**', 'firebase/**'], dest: 'public/assets/vendors'}
         ],
       },
     },
