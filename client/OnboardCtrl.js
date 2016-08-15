@@ -94,6 +94,8 @@
 
             vm.user.startPoint = place.formatted_address;
             vm.user.startPointPlaceID = place.place_id;
+            vm.user.startPointLat = place.geometry.location.lat();
+            vm.user.startPointLong = place.geometry.location.lng();
         }
 
         function fillInAddress2() {
@@ -110,6 +112,8 @@
 
             vm.user.endPoint = place.formatted_address;
             vm.user.endPointPlaceID = place.place_id;
+            vm.user.endPointLat = place.geometry.location.lat();
+            vm.user.endPointLong = place.geometry.location.lng();
         }
 
         // Bias the autocomplete1 object to the user's geographical location,

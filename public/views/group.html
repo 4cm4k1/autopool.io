@@ -1,0 +1,11 @@
+<div layout="column" flex layout-align="space-around stretch">
+    <md-list>
+        <md-list-item class="noright" ng-repeat="user in group.users" ng-hide="group.currentAuth.uid == user.$id">
+            <img ng-src="{{user.photoURL}}" class="md-avatar" alt="{{user.displayName}}" />
+            <p>{{user.displayName}}</p>
+            <md-checkbox class="md-secondary" ng-model="user.selected" ng-change=""></md-checkbox>
+        </md-list-item>
+    </md-list>
+    <md-divider></md-divider>
+    <md-button class="md-primary md-raised" ng-click="group.calculateRoute()">Calculate Route</md-button>
+</div>

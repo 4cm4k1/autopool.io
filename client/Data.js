@@ -45,17 +45,9 @@
             return $firebaseObject(ref.child(uid));
         };
 
-        //  Save map instance and state across controllers
-
-        var maps = {};
-
-        data.addMap = function(mapId) {
-            maps[mapId] = mapId;
-        };
-
-        data.getMap = function(mapId) {
-            if (!maps[mapId]) data.addMap(mapId);
-            return maps[mapId];
+        data.getUsers = function() {
+            var ref = firebase.database().ref().child('users');
+            return $firebaseArray(ref);
         };
 
         //  Make data methods publicly available to rest of app

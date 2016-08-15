@@ -88,8 +88,6 @@
                 'Error: Your browser doesn\'t support geolocation.');
         }
 
-        Data.addMap(map);
-
         $rootScope.map = map;
     }
 })();
