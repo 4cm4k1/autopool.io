@@ -42,13 +42,9 @@
             return user;
         };
 
-        //  Get a users info by uid and make it available as a synchronized obj
-        data.getAndUpdateUserInfo = function(firebaseUid) {
-            var ref = firebase.database().ref();
-
-            var user = $firebaseObject(ref.child('users').child(firebaseUid));
-
-            return user;
+        data.getUser = function(uid) {
+            var ref = firebase.database().ref().child('users');
+            return $firebaseObject(ref.child(uid));
         };
 
         //  Make data methods publicly available to rest of app

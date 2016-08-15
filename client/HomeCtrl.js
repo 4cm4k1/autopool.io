@@ -18,12 +18,17 @@
             vm.error = null;
 
             Auth.$signInWithPopup("google").then(function(firebaseUser) {
-                console.log("Signed in as:", firebaseUser.user.displayName, firebaseUser.user.email);
-                console.log('Info:', firebaseUser);
 
-                Data.saveNewUser(firebaseUser.user.uid, firebaseUser.user.displayName, firebaseUser.user.email, firebaseUser.user.photoURL, firebaseUser.user.providerData[0].uid);
+                vm.something = Data.getUser(firebaseUser.user.uid);
 
-                console.log('Checked DB and found:', Data.getAndUpdateUserInfo(firebaseUser.user.uid));
+                vm.something.$loaded().then(function(obj){
+                    if(obj.displayName){
+                        console.log('user exists!');
+                    } else {
+                        console.log('user does not exist!');
+                        Data.saveNewUser(firebaseUser.user.uid, firebaseUser.user.displayName, firebaseUser.user.email, firebaseUser.user.photoURL, firebaseUser.user.providerData[0].uid);
+                    }
+                });
 
                 $location.path('/onboard');
             }).catch(function(error) {
