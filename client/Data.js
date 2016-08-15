@@ -20,14 +20,11 @@
             user.googleUid = googleUid;
             user.startPoint = null;
             user.endPoint = null;
-            user.contactEmail = null;
             user.phoneNumber = null;
-            user.phoneType = null;
             user.role = {
                 type: null,
                 distances: null
             };
-            user.latLong = null;
             user.createDate = firebase.database.ServerValue.TIMESTAMP;
             user.modDate = firebase.database.ServerValue.TIMESTAMP;
             user.isAdmin = false;
@@ -42,9 +39,23 @@
             return user;
         };
 
+        //  Get user (also synchronizes object between view and DB)
         data.getUser = function(uid) {
             var ref = firebase.database().ref().child('users');
             return $firebaseObject(ref.child(uid));
+        };
+
+        //  Save map instance and state across controllers
+
+        var maps = {};
+
+        data.addMap = function(mapId) {
+            maps[mapId] = mapId;
+        };
+
+        data.getMap = function(mapId) {
+            if (!maps[mapId]) data.addMap(mapId);
+            return maps[mapId];
         };
 
         //  Make data methods publicly available to rest of app

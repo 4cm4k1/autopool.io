@@ -1,39 +1,35 @@
 <div layout="column" flex layout-align="space-around stretch">
     <div layout-gt-sm="row">
         <md-input-container class="md-icon-float md-block" flex-gt-sm>
-            <label>First Name</label>
+            <label>Full Name</label>
             <md-icon class="md-primary">person</md-icon>
-            <input ng-model="user.firstName" />
-        </md-input-container>
-        <md-input-container class="md-block" flex-gt-sm>
-            <label>Last Name</label>
-            <input ng-model="theMax" />
+            <input ng-model="onboard.user.displayName" />
         </md-input-container>
     </div>
     <div layout-gt-sm="row">
         <md-input-container class="md-icon-float md-block" flex-gt-sm>
             <label>Starting Address</label>
             <md-icon class="md-primary">home</md-icon>
-            <input ng-model="something" />
+            <input ng-model="onboard.user.startPoint" id="autocomplete1" ng-focus="onboard.geolocate()" placeholder="Address where you're starting" />
         </md-input-container>
     </div>
     <div layout-gt-sm="row">
         <md-input-container class="md-icon-float md-block" flex-gt-sm>
             <label>Ending Address</label>
             <md-icon class="md-primary">work</md-icon>
-            <input ng-model="something" />
+            <input ng-model="onboard.user.endPoint" id="autocomplete2" ng-focus="onboard.geolocate()" placeholder="Address where you're going" />
         </md-input-container>
     </div>
     <div layout-gt-sm="row">
         <md-input-container class="md-icon-float md-block" flex-gt-sm>
             <label>Phone Number</label>
-            <md-icon class="md-primary">work</md-icon>
-            <input ng-model="something" />
+            <md-icon class="md-primary">phone</md-icon>
+            <input ng-model="onboard.user.phoneNumber" />
         </md-input-container>
     </div>
-    <md-radio-group ng-model="data.group1" layout="row" layout-align="center">
-        <md-radio-button value="Driver" class="md-primary">Driver</md-radio-button>
-        <md-radio-button value="Passenger" class="md-primary">Passenger</md-radio-button>
+    <md-radio-group ng-model="onboard.user.role" layout="row" layout-align="center" layout-padding>
+        <md-radio-button value="driver" class="md-primary">Driver</md-radio-button>
+        <md-radio-button value="passenger" class="md-primary">Passenger</md-radio-button>
     </md-radio-group>
-    <md-button class="md-primary md-raised">Submit</md-button>
+    <md-button class="md-primary md-raised" ng-click="onboard.submitOnboardInfo()">Submit</md-button>
 </div>

@@ -5,9 +5,9 @@
 
     angular.module('autopoolIoApp').controller('MapCtrl', MapCtrl);
 
-    // MapCtrl.$inject = ['NgMap'];
+    MapCtrl.$inject = ['Data', '$rootScope'];
 
-    function MapCtrl() {
+    function MapCtrl(Data, $rootScope) {
         var vm = this;
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -87,5 +87,9 @@
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.');
         }
+
+        Data.addMap(map);
+
+        $rootScope.map = map;
     }
 })();
