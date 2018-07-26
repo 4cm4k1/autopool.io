@@ -19,7 +19,7 @@
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "material-design-icons": "^2.2.3"
+    "material-design-icons": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
